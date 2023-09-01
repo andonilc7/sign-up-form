@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+@font-face {
+  font-family: NorseBold;
+  src: url("/assets/Norse-Bold.otf");
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  
+}
+
+/* left */
+.left {
+  width:60vw;
+  height:100vh;
+  background: url(assets/halie-west-25xggax4bSA-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.overlay {
+  position:absolute;
+  top:25%;
+  background-color: rgba(0, 0, 0, 0.527);
+  width: 100%;
+  height:100px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.odin-image {
+  background:url(/assets/odin-lined.png);
+  z-index: 100;
+  height: 80%;
+  width:60px;
+  margin-right:10px;
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+.odin-text {
+  font-family: NorseBold;
+  color: white;
+  font-size: 3.5rem;
+
+  /* height of 2.7rem is so i dont
+    have extra blank space on bottom part of div,
+    not sure why it was like that that i'd have to 
+    do shorter height than font-size, probably the 
+    font has a natural blank space on bottom */
+  height:2.7rem;
+  display: block;
+  
+}
+
+.credit {
+  position: absolute;
+  bottom:3px;
+  color: rgba(255,255,255, .7);
+  font-size:.6rem;
+  display: flex;
+  width:100%;
+  justify-content: center;
+}
+
+.credit a {
+  color: rgba(255,255,255, .7);
+  text-decoration: underline;
+  
+}
+
+
+/* right */
+.right {
+  display:flex;
+  flex-direction: column;
+  width: max(60%,700px);
+
+}
+
+.right > * {
+flex-grow: 1;
+padding-left: 40px;
+padding-right: min(10%, 80px);
+}
+
+
+/* right description */
+
+.right-description {
+  background-color: #F9FAFB;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  flex-grow:.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.right-desc-first {
+  padding-bottom: 10px;
+}
+
+
+/* input section */
+
+.input-section {
+  max-height: fit-content;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.123);
+  position:relative;
+}
+.input-section > p {
+  font-size: 1.5rem;
+  padding-top: 20px;
+  
+}
+
+#my-form {
+ margin-bottom: 20px
+}
+
+#my-form > ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 30px 10px 0;
+  
+}
+
+
+
+ input {
+  border: 1px solid #E5E7EB;
+  border-radius: 2px;
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+.form-item > input:focus  {
+  outline-style:none;
+
+  border: 1px solid #90A2E1;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.15);
+}
+
+
+/* submit section */
+
+.submit-section {
+  background-color: #F9FAFB;
+  padding-top: 20px;
+  
+}
+
+button[type=submit] {
+  width: 9rem;
+  height: 1.7rem;
+  border:0;
+  border-radius: 5px;
+  background-color: #596D48;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 25px;
+}
+
+button[type=submit]:hover {
+  cursor: pointer;
+}
+
+a {
+  color: #596D48;
+  text-decoration: none;
+}
+
+input:focus:invalid {
+  border-color: red;
+}
+
+.form-item {
+  position: relative;
+}
+
+.error {
+  border-color: red;
+
+}
+
+.error-msg + span::after {
+  content: "*Passwords do not match";
+  color: red;
+  position: absolute;
+  top: 38px;
+  font-size: .7rem;
+}
